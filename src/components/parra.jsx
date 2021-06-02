@@ -10,6 +10,7 @@ import CountUpPurchases from "./countuppurchases.jsx";
 import CountUpSales from "./countupsales.jsx";
 import { db } from "../store/firebase.js";
 import Grid from "@material-ui/core/Grid";
+import axios from "axios";
 
 class Parra extends Component {
   constructor(props) {
@@ -71,15 +72,31 @@ class Parra extends Component {
   }
 
   async callRefs() {
-    fetch("/users")
-      .then((res) => res.json())
-      .then((replies) =>
-        this.setState(
-          { twitterRef: replies.replies },
+    const url = "https://shvrkboyapinodejs.herokuapp.com";
 
-          this.setState({ apiLoaded: true, isActive: false })
-        )
+    axios.get(url).then((res) => {
+      this.setState(
+        { twitterRef: res.data.replies },
+        this.setState({ apiLoaded: true, isActive: false })
       );
+    });
+
+    // fetch(url, { mode: "cors" })
+    //   .then((res) => {
+    //     console.log(res);
+    //     res.json();
+    //   })
+    //   .then(
+    //     (replies) =>
+    //       this.setState(
+    //         { twitterRef: replies.replies },
+
+    //         this.setState({ apiLoaded: true, isActive: false })
+    //       ),
+    //     () => {
+    //       console.log(this.state.twitterRef);
+    //     }
+    //   );
   }
 
   async randomNumGen() {
