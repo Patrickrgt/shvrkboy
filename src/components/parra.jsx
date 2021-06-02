@@ -361,7 +361,7 @@ class Parra extends Component {
             </ul>
           </div>
         )}
-        <div className="nav nav-img-1 animate__animated animate__delay-1s">
+        <div className="nav nav-img-1">
           <Grid container spacing={1}>
             <Grid item lg>
               <h1 id="aboutMain" className="grid-item">
