@@ -1,7 +1,5 @@
 import React from "react";
-
 import "./App.css";
-
 import Parra from "./components/parra.jsx";
 import Mobile from "./components/mobile.jsx";
 
