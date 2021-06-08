@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import mca from "../img/mca.png";
-import mcafloat from "../img/mcafloat.png";
+
 import jound from "../img/jound.png";
 import jordan from "../img/jordan.png";
 import { db } from "../store/firebase.js";
@@ -8,22 +8,22 @@ import axios from "axios";
 import CountUpPurchases from "./countuppurchases.jsx";
 import CountUpSales from "./countupsales.jsx";
 import PaginationMobile from "../components/paginationMobile";
-import { paginate } from "../utils/paginate";
+// import { paginate } from "../utils/paginate";
 
 import {
   Swiper,
   SwiperSlide,
-  Navigation,
-  Pagination,
-  Scrollbar,
-  A11y,
-  Virtual,
+  // Navigation,
+  // Pagination,
+  // Scrollbar,
+  // A11y,
+  // Virtual,
 } from "swiper/react";
 
 class Mobile extends Component {
-  constructor(props) {
-    super(props);
-  }
+  // constructor(props) {
+  //   super(props);
+  // }
 
   state = {
     scouttApp: [],
@@ -204,13 +204,13 @@ class Mobile extends Component {
   render() {
     const twitterRef = this.state.twitterRef;
     const { length: count } = twitterRef;
-    const { pageSize, currentPage, twitterRef: allRefs } = this.state;
-    const refs = paginate(allRefs, currentPage, pageSize);
-    let displayAbout = false;
-    var counter = 1;
-    const slides = Array.from({ length: 1000 }).map(
-      (el, index) => `Slide ${index + 1}`
-    );
+    const { pageSize, currentPage } = this.state;
+    // const refs = paginate(allRefs, currentPage, pageSize);
+    // let displayAbout = false;
+    // var counter = 1;
+    // const slides = Array.from({ length: 1000 }).map(
+    //   (el, index) => `Slide ${index + 1}`
+    // );
     return (
       <React.Fragment>
         <Swiper
@@ -268,7 +268,7 @@ class Mobile extends Component {
                   onClick={() => this.testM()}
                   className="btn-change-jound btn-jound"
                 ></button>
-                {twitterRef != "" ? (
+                {twitterRef !== "" ? (
                   <React.Fragment>
                     <div className="vert-m">
                       {this.state.twitterRef[0].replies.map(
@@ -281,6 +281,7 @@ class Mobile extends Component {
                               <div className="row">
                                 <div className="col-sm test-img-col-m">
                                   <img
+                                    alt="twitter profile pic"
                                     src={twitterApi.pfp}
                                     className="test-img-m"
                                   ></img>

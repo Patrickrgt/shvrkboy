@@ -10,7 +10,6 @@ import CountUpPurchases from "./countuppurchases.jsx";
 import CountUpSales from "./countupsales.jsx";
 import { db } from "../store/firebase.js";
 import Grid from "@material-ui/core/Grid";
-import axios from "axios";
 
 class Parra extends Component {
   constructor(props) {
