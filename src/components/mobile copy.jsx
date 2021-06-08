@@ -3,12 +3,6 @@ import mca from "../img/mca.png";
 import mcafloat from "../img/mcafloat.png";
 import jound from "../img/jound.png";
 import jordan from "../img/jordan.png";
-import { db } from "../store/firebase.js";
-import axios from "axios";
-import CountUpPurchases from "./countuppurchases.jsx";
-import CountUpSales from "./countupsales.jsx";
-import PaginationMobile from "../components/paginationMobile";
-import { paginate } from "../utils/paginate";
 
 import {
   Swiper,
@@ -38,66 +32,51 @@ class Mobile extends Component {
     randomNum2: "",
     randomNum3: "",
     hypebeast: mca,
-    currentPage: 1,
-    pageSize: 4,
-    clickOnce: false,
-    showSales: false,
-    scroll: 0,
-    tab: 0,
-    scoutProfits: 0,
-    displayNumbers: false,
-    renderNumbers: false,
-    isActive: true,
-    waitTime: 0,
   };
 
-  async handleWait() {
-    if (this.state.isActive === true) {
-      var wait = this.state.waitTime;
-      wait++;
-      this.setState({
-        waitTime: wait,
-      });
-    }
-  }
-
-  async callAPI() {
-    db.collection("sales")
-      .get()
-      .then((querySnapshot) => {
-        const data = querySnapshot.docs.map((doc) => doc.data());
-
-        this.setState({ scouttApp: data }, () => {
-          this.setState({
-            scouttLoad: true,
-
-            scoutPurchases: parseFloat(
-              data[0].totalPurchases.replace(/\$|,/g, "")
-            ),
-            scoutSales: parseFloat(data[0].totalSales.replace(/\$|,/g, "")),
-          });
-        });
-      });
-  }
-
-  async callRefs() {
-    const url = "https://shvrkboyapinodejs.herokuapp.com";
-
-    axios.get(url).then((res) => {
-      this.setState(
-        { twitterRef: res.data.replies },
-        this.setState({ apiLoaded: true, isActive: false })
+  callAPI() {
+    fetch("/twitterAPI")
+      .then((res) => res.json())
+      .then((results) =>
+        this.setState(
+          { scouttApp: [results] },
+          () => console.log("ScouttApp Results: ", results),
+          this.setState({ scouttLoad: true })
+        )
       );
-    });
   }
 
-  async randomNumGen() {
+  callRefs() {
+    fetch("/users")
+      .then((res) => res.json())
+      .then((replies) =>
+        this.setState(
+          { twitterRef: [replies] },
+          () => console.log("Twitter References: ", replies),
+          this.setState({ apiLoaded: true })
+        )
+      );
+  }
+
+  randomNumGen() {
+    let random1 = 0;
+    let random2 = 0;
+    let random3 = 0;
     if (this.state.scouttLoad) {
       return;
-    } else this.setState({ randomNum1: "loading" });
+    } else
+      setInterval(() => {
+        random1 = Math.floor(Math.random() * 9 + 1);
+        random2 = Math.floor(Math.random() * 9 + 1);
+        random3 = Math.floor(Math.random() * 9 + 1);
+        this.setState({ randomNum1: random1 });
+        this.setState({ randomNum2: random2 });
+        this.setState({ randomNum3: random3 });
+      }, 50);
   }
 
   componentDidMount() {
+    console.log(this.state.counter);
     this.callAPI();
     this.callRefs();
     this.randomNumGen();
@@ -203,9 +182,6 @@ class Mobile extends Component {
 
   render() {
     const twitterRef = this.state.twitterRef;
-    const { length: count } = twitterRef;
-    const { pageSize, currentPage, twitterRef: allRefs } = this.state;
-    const refs = paginate(allRefs, currentPage, pageSize);
     let displayAbout = false;
     var counter = 1;
     const slides = Array.from({ length: 1000 }).map(
@@ -232,24 +208,47 @@ class Mobile extends Component {
                 ></button>
                 <div className="about-sub-m-container-m">
                   <article id="aboutM" className="about-sub-m">
-                    Thank you for visiting my page!
+                    Fashion, art enthusiast and reseller.
+                    <br></br>
+                    First-generation born American.
+                    <br></br>
+                    Parents did not grow up with much but were
+                    <br></br>a big inspiration on my work ethic, they
+                    <br></br>were born in the Philippines and got to
+                    <br></br>
+                    the United States to nurse AIDs
+                    <br></br>
+                    patients during the AIDs epidemic.
                     <br></br>
                     <br></br>
-                    I'm a sneakerhead that's into art, fashion, coding and
-                    reselling.
+                    They taught me the value of money, but also
+                    <br></br>
+                    to treat myself to nice things. My mother is
+                    <br></br>
+                    frugal with her money and thinks about the
+                    <br></br>
+                    future but my dad priorities other people's
+                    <br></br>
+                    happiness and willingly spends graciously on them.
+                    <br></br>
+                    Their clashing personalities did not work well and
+                    <br></br>
+                    eventually they divorced when our finances
+                    <br></br>were not working out.
                     <br></br>
                     <br></br>
-                    My work ethic revolves around my nurting at a young age. I
-                    never felt good enough compared to others, but when I
-                    stopped comparing myself to others or caring what other
-                    people thought--I started to learn to do things for
-                    myself--to make myself proud.
+                    The fighting between them about finances
                     <br></br>
+                    pushed me to take a risk and start a business.
                     <br></br>
-                    Today I'm an aspiring full-stack developer maintaining an
-                    LLC with passion to continue learning from people smarter
-                    than me and creating projects with groups of like-minded
-                    people.
+                    <br></br>I grew up interested in entrepreneurship,
+                    <br></br>worked for three summers during high-school
+                    <br></br>to save enough money for any expenses.
+                    <br></br>Opened up a secured deposit credit card at 18
+                    <br></br>and started building credit.
+                    <br></br>
+                    Purchased Supreme apparel during week 0 of the
+                    <br></br>Fall/Winter 2018 Season and took off from there.
                   </article>
                 </div>
               </article>
@@ -304,14 +303,6 @@ class Mobile extends Component {
                           </div>
                         )
                       )}
-                      <div className="pagination-div">
-                        <PaginationMobile
-                          itemsCount={count}
-                          pageSize={pageSize}
-                          currentPage={currentPage}
-                          onPageChange={this.handlePageChange}
-                        />
-                      </div>
                     </div>
                   </React.Fragment>
                 ) : null}
@@ -334,32 +325,25 @@ class Mobile extends Component {
                 <div id="salesM">
                   {this.state.scouttLoad ? (
                     <React.Fragment>
-                      {this.state.scouttApp.map((scouttApi, index) => (
-                        <section key={index}>
+                      {this.state.scouttApp.map((scouttApi) => (
+                        <React.Fragment>
+                          <div id="profit" className="row">
+                            <h1>
+                              Total Profit: {scouttApi.results.totalProfit}
+                            </h1>
+                          </div>
+
                           <div id="purchase" className="row">
                             <h1>
-                              Total Purchases:{""}
-                              {this.state.renderNumbers ? (
-                                <CountUpPurchases
-                                  num={this.state.scoutPurchases}
-                                />
-                              ) : (
-                                <span>error fetching</span>
-                              )}
+                              Total Purchases:{" "}
+                              {scouttApi.results.totalPurchases}
                             </h1>
                           </div>
 
                           <div id="sale" className="row">
-                            <h1>
-                              Total Sales:{""}
-                              {this.state.renderNumbers ? (
-                                <CountUpSales num={this.state.scoutSales} />
-                              ) : (
-                                <span>error fetching</span>
-                              )}
-                            </h1>
+                            <h1>Total Sales: {scouttApi.results.totalSales}</h1>
                           </div>
-                        </section>
+                        </React.Fragment>
                       ))}
                     </React.Fragment>
                   ) : (

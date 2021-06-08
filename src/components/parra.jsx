@@ -72,14 +72,26 @@ class Parra extends Component {
   }
 
   async callRefs() {
-    const url = "https://shvrkboyapinodejs.herokuapp.com";
+    db.collection("refs")
+      .get()
+      .then((querySnapshot) => {
+        const data = querySnapshot.docs.map((doc) => doc.data());
 
-    axios.get(url).then((res) => {
-      this.setState(
-        { twitterRef: res.data.replies },
-        this.setState({ apiLoaded: true, isActive: false })
-      );
-    });
+        this.setState({
+          twitterRef: data,
+          apiLoaded: true,
+          isActive: false,
+        });
+      });
+
+    // const url = "https://shvrkboyapinodejs.herokuapp.com";
+
+    // axios.get(url).then((res) => {
+    //   this.setState(
+    //     { twitterRef: res.data.replies },
+    //     this.setState({ apiLoaded: true, isActive: false })
+    //   );
+    // });
 
     // fetch(url, { mode: "cors" })
     //   .then((res) => {
@@ -329,10 +341,10 @@ class Parra extends Component {
             <h1 className="overlay-text">
               Please wait while page loads. Use the scroll wheel to sift through
               the left tabs.
-              {this.state.waitTime > 9 ? (
-                <span>still here? thanks for waiting.</span>
-              ) : this.state.waitTime > 4 ? (
-                <span>oh my it's passed atleast 5 seconds.</span>
+              {this.state.waitTime > 19 ? (
+                <span> Getting Drinks.</span>
+              ) : this.state.waitTime > 9 ? (
+                <span> Fetching snacks.</span>
               ) : (
                 <span></span>
               )}
@@ -388,6 +400,11 @@ class Parra extends Component {
               <h1 id="futureMain" className="grid-item">
                 FUTURE
               </h1>
+              <div className="extras-container">
+                <span className="extras">
+                  use the mouse wheel to scroll through the tabs
+                </span>
+              </div>
             </Grid>
           </Grid>
         </div>
