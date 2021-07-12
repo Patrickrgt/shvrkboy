@@ -5,7 +5,7 @@ import mca from "../img/mca.png";
 import jound from "../img/jound.png";
 import jordan from "../img/jordan.png";
 import azael from "../img/azaelcom.jpg";
-import { paginate } from "../utils/paginate";
+
 import CountUpPurchases from "./countuppurchases.jsx";
 import CountUpSales from "./countupsales.jsx";
 import { db } from "../store/firebase.js";
@@ -135,8 +135,6 @@ class Mobile extends Component {
   }
 
   render() {
-    const { pageSize, currentPage, twitterRef: allRefs } = this.state;
-
     return (
       <React.Fragment>
         <div className="container-m">
