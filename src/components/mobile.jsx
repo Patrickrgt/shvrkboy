@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import Pagination from "../components/pagination";
+
 import mca from "../img/mca.png";
-import { Parallax } from "react-parallax";
 
 import jound from "../img/jound.png";
 import jordan from "../img/jordan.png";
@@ -12,9 +11,7 @@ import CountUpSales from "./countupsales.jsx";
 import { db } from "../store/firebase.js";
 
 class Mobile extends Component {
-  constructor(props) {
-    super(props);
-  }
+  constructor(props) {}
 
   state = {
     scouttApp: [],
@@ -138,10 +135,8 @@ class Mobile extends Component {
   }
 
   render() {
-    const twitterRef = this.state.twitterRef;
-    const { length: count } = twitterRef;
     const { pageSize, currentPage, twitterRef: allRefs } = this.state;
-    const refs = paginate(allRefs, currentPage, pageSize);
+
     return (
       <React.Fragment>
         <div className="container-m">
