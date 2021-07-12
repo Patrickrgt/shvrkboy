@@ -5,9 +5,9 @@ import Mobile from "./components/mobile.jsx";
 
 function App() {
   function UserGreeting(props) {
-    if (window.innerWidth >= 426) {
+    if (window.innerWidth >= 1026) {
       return <Parra></Parra>;
-    } else if (window.innerWidth <= 425) {
+    } else if (window.innerWidth <= 1026) {
       return <Mobile></Mobile>;
     }
   }

@@ -200,6 +200,7 @@ class Parra extends Component {
   }
 
   displayAbout() {
+    this.setState({ tab: 0 });
     const aboutMain = document.getElementById("aboutMain");
     aboutMain.style.opacity = "0.3";
     const testMain = document.getElementById("testMain");
@@ -223,6 +224,7 @@ class Parra extends Component {
   }
 
   async displayTestimonials() {
+    this.setState({ tab: 1 });
     const aboutMain = document.getElementById("aboutMain");
     aboutMain.style.opacity = "1";
     const testMain = document.getElementById("testMain");
@@ -254,6 +256,10 @@ class Parra extends Component {
   }
 
   displaySales() {
+    this.setState({ tab: 2 });
+    this.setState({
+      renderNumbers: true,
+    });
     const aboutMain = document.getElementById("aboutMain");
     aboutMain.style.opacity = "1";
     const testMain = document.getElementById("testMain");
@@ -293,6 +299,7 @@ class Parra extends Component {
   }
 
   displayFuture() {
+    this.setState({ tab: 3 });
     const aboutMain = document.getElementById("aboutMain");
     aboutMain.style.opacity = "1";
     const testMain = document.getElementById("testMain");
@@ -375,28 +382,44 @@ class Parra extends Component {
         <div className="nav nav-img-1">
           <Grid container spacing={1}>
             <Grid item lg>
-              <h1 id="aboutMain" className="grid-item">
+              <h1
+                onClick={() => this.displayAbout()}
+                id="aboutMain"
+                className="grid-item"
+              >
                 ABOUT
               </h1>
             </Grid>
           </Grid>
           <Grid container spacing={1}>
             <Grid item lg>
-              <h1 id="testMain" className="grid-item">
+              <h1
+                onClick={() => this.displayTestimonials()}
+                id="testMain"
+                className="grid-item"
+              >
                 TESTIMONIALS
               </h1>
             </Grid>
           </Grid>
           <Grid container spacing={1}>
             <Grid item lg>
-              <h1 id="salesMain" className="grid-item">
+              <h1
+                onClick={() => this.displaySales()}
+                id="salesMain"
+                className="grid-item"
+              >
                 SALES
               </h1>
             </Grid>
           </Grid>
           <Grid container spacing={1}>
             <Grid item lg>
-              <h1 id="futureMain" className="grid-item">
+              <h1
+                onClick={() => this.displayFuture()}
+                id="futureMain"
+                className="grid-item"
+              >
                 FUTURE
               </h1>
               <div className="extras-container">
