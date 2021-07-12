@@ -11,7 +11,7 @@ import CountUpSales from "./countupsales.jsx";
 import { db } from "../store/firebase.js";
 
 class Mobile extends Component {
-  constructor(props) {}
+  // constructor(props) {}
 
   state = {
     scouttApp: [],
