@@ -674,7 +674,7 @@ body {
     overflow-x: hidden;
     width: 100%;
     height: 100%;
-    border: 5px dashed red;
+    /* border: 5px dashed red; */
     display: flex;
     flex-flow: column;
     scroll-behavior: smooth;
@@ -707,21 +707,21 @@ body {
   }
 
   #testimonials-m {
-    opacity: 1;
+    opacity: 0;
     transition: ease all 1s;
   }
 
   #sales-m {
-    opacity: 1;
+    opacity: 0;
     transition: ease all 1s;
   }
 
   #future-m {
-    opacity: 1;
+    opacity: 0;
     transition: ease all 1s;
   }
 
-  #about-m:hover {
+  /* #about-m:hover {
     opacity: 1;
     transition: ease all 1s;
   }
@@ -739,10 +739,10 @@ body {
   #future-m:hover {
     opacity: 1 !important;
     transition: ease all 1s;
-  }
+  } */
 
   .container-m {
-    border: 5px dashed red;
+    /* border: 5px dashed red; */
     width: 100%;
     display: flex;
     flex-flow: column;
@@ -752,7 +752,7 @@ body {
 
   .container-m h1 {
     font-size: 4vh;
-    border: 5px dashed red;
+    /* border: 5px dashed red; */
     margin: auto;
   }
 
@@ -763,7 +763,9 @@ body {
   /* Main */
 
   .mini-img {
-    border: 1px dashed blueviolet;
+    background-attachment: fixed;
+
+    /* border: 1px dashed blueviolet; */
     margin-left: auto;
     margin-right: auto;
     left: 0;
@@ -837,7 +839,7 @@ body {
 
   .test-main-m {
     height: 60vh;
-    border: 4px dashed brown;
+    /* border: 4px dashed brown; */
     overflow: auto;
   }
 
@@ -845,7 +847,7 @@ body {
     display: flex;
     flex-flow: column;
     overflow: auto;
-    border: 3px dashed yellow;
+    /* border: 3px dashed yellow; */
     overflow: auto;
 
     z-index: 2;

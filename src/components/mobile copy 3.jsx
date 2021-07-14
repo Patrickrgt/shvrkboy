@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 
-import mca from "../img/mcamob.jpg";
-import jound from "../img/joundmob.jpg";
-import jordan from "../img/jordanmob.jpg";
-import azael from "../img/azaelmob.jpg";
+import mca from "../img/mcacom.jpg";
+import jound from "../img/joundcom.jpg";
+import jordan from "../img/jordancom.jpg";
+import azael from "../img/azaelcom.jpg";
 
 import CountUpPurchases from "./countuppurchases.jsx";
 import CountUpSales from "./countupsales.jsx";
@@ -42,6 +42,9 @@ class Mobile extends Component {
   };
 
   handleScroll(e) {
+    this.setState({
+      offsetY: window.pageYOffset,
+    });
     // console.log();
 
     // About Tab
@@ -134,24 +137,6 @@ class Mobile extends Component {
     //   testTab.style.display = "1";
     //   testDiv.style.width = "100%";
     // }
-
-    // MCA Positions
-
-    // this.setState({
-    //   offsetY: window.pageYOffset,
-    // });
-
-    const McaBox = document.querySelector("#mcaM");
-    const McaRect = McaBox.getBoundingClientRect();
-    if (McaRect.y < 0) {
-      this.setState({
-        offsetY: McaRect.y * -1,
-      });
-    } else {
-      this.setState({
-        McaRect: 0,
-      });
-    }
 
     // Jound Positions
     const JoundBox = document.querySelector("#joundM");
@@ -316,7 +301,7 @@ class Mobile extends Component {
             className="mini-img"
             src={mca}
             alt=""
-            style={{ transform: `translateY(${this.state.offsetY * 0.5}px)` }}
+            // style={{ transform: `translateY(${this.state.offsetY * 0.5}px)` }}
           />
 
           <div></div>
@@ -377,9 +362,9 @@ class Mobile extends Component {
             className="mini-img"
             src={jound}
             alt=""
-            style={{
-              transform: `translateY(${this.state.JoundOffset * 0.5}px)`,
-            }}
+            // style={{
+            //   transform: `translateY(${this.state.JoundOffset * 0.5}px)`,
+            // }}
           />
 
           <article id="testimonialsM">
@@ -459,9 +444,9 @@ class Mobile extends Component {
               className="mini-img"
               src={azael}
               alt=""
-              style={{
-                transform: `translateY(${this.state.AzaelOffset * 0.5}px)`,
-              }}
+              // style={{
+              //   transform: `translateY(${this.state.AzaelOffset * 0.5}px)`,
+              // }}
             />
           </article>
           <article className="articles-right-m">
