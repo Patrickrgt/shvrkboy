@@ -251,10 +251,26 @@ class Mobile extends Component {
     return (
       <React.Fragment>
         {/* Floating Images */}
-        <img className="mcafloat-m" src={mcafloat}></img>
-        <img className="joundfloat-m" src={joundfloat}></img>
-        <img className="jordanfloat-m" src={jordanfloat}></img>
-        <img className="azaelfloat-m" src={azaelfloat}></img>
+        <img
+          alt="floating mca shoe"
+          className="mcafloat-m"
+          src={mcafloat}
+        ></img>
+        <img
+          alt="floating jound shoe"
+          className="joundfloat-m"
+          src={joundfloat}
+        ></img>
+        <img
+          alt="floating jordan shoe"
+          className="jordanfloat-m"
+          src={jordanfloat}
+        ></img>
+        <img
+          alt="floating yeezy shoe"
+          className="azaelfloat-m"
+          src={azaelfloat}
+        ></img>
         {/* Tabs */}
 
         <div className="float-tabs">
@@ -307,7 +323,7 @@ class Mobile extends Component {
             className="mini-img"
             src={mca}
             alt=""
-            // style={{ transform: `translateY(${this.state.offsetY}px)` }}
+            style={{ transform: `translateY(${this.state.offsetY}px)` }}
           />
 
           <div></div>
@@ -368,9 +384,9 @@ class Mobile extends Component {
             className="mini-img"
             src={jound}
             alt=""
-            // style={{
-            //   transform: `translateY(${this.state.JoundOffset}px)`,
-            // }}
+            style={{
+              transform: `translateY(${this.state.JoundOffset}px)`,
+            }}
           />
 
           <article id="testimonialsM">
@@ -452,9 +468,9 @@ class Mobile extends Component {
               className="mini-img"
               src={azael}
               alt=""
-              // style={{
-              //   transform: `translateY(${this.state.AzaelOffset}px)`,
-              // }}
+              style={{
+                transform: `translateY(${this.state.AzaelOffset}px)`,
+              }}
             />
           </article>
           <article className="articles-right-m">
