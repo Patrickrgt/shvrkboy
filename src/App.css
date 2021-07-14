@@ -670,7 +670,6 @@ body {
   }
 
   body {
-    font-family: "Roboto", sans-serif;
     overflow: auto;
     overflow-x: hidden;
     width: 100%;
@@ -786,7 +785,7 @@ body {
 
   .articles-left-m {
     flex-grow: 1;
-    margin-left: 2vw;
+    margin-left: 4%;
   }
 
   .about-sub-m {
@@ -795,7 +794,6 @@ body {
     padding: 2% 4%;
     width: 85%;
     background-color: rgba(175, 194, 245, 0.5);
-
     /* background: linear-gradient(rgba(175, 194, 245, 0.719), rgba(0, 0, 0, 0)); */
     font-size: 2vh;
     text-align: left;
@@ -842,6 +840,7 @@ body {
   }
 
   .test-main-m {
+    margin-left: 4%;
     height: 60vh;
     /* border: 4px dashed brown; */
     overflow: auto;
@@ -924,7 +923,7 @@ body {
   .future-container-m {
     text-align: right;
     display: inline-block;
-    margin-left: 2vw;
+    margin-left: 4%;
   }
 
   .future-sub-m {
@@ -940,11 +939,12 @@ body {
   }
 
   .footer-m {
-    padding: 2% 2%;
+    padding: 2% 0%;
     text-align: left;
     width: 85%;
     opacity: 0.5;
     font-size: 2vh;
+    margin-left: 4%;
   }
 
   /* Images */
