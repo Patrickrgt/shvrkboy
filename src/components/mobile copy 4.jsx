@@ -5,19 +5,12 @@ import jound from "../img/joundmob.jpg";
 import jordan from "../img/jordanmob.jpg";
 import azael from "../img/azaelmob.jpg";
 
-import mcafloat from "../img/mcafloat.png";
-import jordanfloat from "../img/jordanfloat.png";
-import azaelfloat from "../img/azaelfloat.png";
-import joundfloat from "../img/joundfloat.png";
-
 import CountUpPurchases from "./countuppurchases.jsx";
 import CountUpSales from "./countupsales.jsx";
 import { db } from "../store/firebase.js";
 
 class Mobile extends Component {
-  // constructor(props) {
-  //   this.top = React.createRef();
-  // }
+  // constructor(props) {}
 
   state = {
     scouttApp: [],
@@ -49,24 +42,25 @@ class Mobile extends Component {
   };
 
   handleScroll(e) {
-    const mcaFloat = document.querySelector(".mcafloat-m");
-    const joundFloat = document.querySelector(".joundfloat-m");
-    const jordanFloat = document.querySelector(".jordanfloat-m");
-    const azaelFloat = document.querySelector(".azaelfloat-m");
+    // console.log();
+
+    // About Tab
+
+    // const aboutTab = document.querySelector("#about-m");
+    // const aboutTabRect = aboutTab.getBoundingClientRect();
+
+    // console.log(aboutTabRect);
 
     const aboutTab = document.querySelector("#about-m");
     const aboutSub = document.querySelector("#aboutM").getBoundingClientRect();
 
     if (1 < aboutSub.y) {
       aboutTab.style.opacity = "1";
-      mcaFloat.style.opacity = "1";
-      mcaFloat.style.transform = `rotate(${this.state.offsetY}deg)`;
       this.setState({
         tabs: ["about", "testimonials", "sales", "future"],
       });
     } else {
       aboutTab.style.opacity = "0";
-      mcaFloat.style.opacity = "0";
     }
 
     const testTab = document.querySelector("#testimonials-m");
@@ -77,14 +71,11 @@ class Mobile extends Component {
 
     if (testImg.top < 1 && 1 < testSub.top) {
       testTab.style.opacity = "1";
-      joundFloat.style.opacity = "1";
-      joundFloat.style.transform = `rotate(${this.state.JoundOffset}deg)`;
       this.setState({
         tabs: ["testimonials", "about", "sales", "future"],
       });
     } else {
       testTab.style.opacity = "0";
-      joundFloat.style.opacity = "0";
     }
 
     const salesTab = document.querySelector("#sales-m");
@@ -93,15 +84,11 @@ class Mobile extends Component {
 
     if (salesImg.top < 1 && 1 < salesSub.top) {
       salesTab.style.opacity = "1";
-      jordanFloat.style.opacity = "1";
-      jordanFloat.style.transform = `rotate(${this.state.JordanOffset}deg)`;
-
       this.setState({
         tabs: ["sales", "testimonials", "about", "future"],
       });
     } else {
       salesTab.style.opacity = "0";
-      jordanFloat.style.opacity = "0";
     }
 
     const futureTab = document.querySelector("#future-m");
@@ -112,23 +99,53 @@ class Mobile extends Component {
 
     if (futureImg.top < 1 && 1 < futureSub.top) {
       futureTab.style.opacity = "1";
-      azaelFloat.style.opacity = "1";
-      azaelFloat.style.transform = `rotate(${this.state.AzaelOffset}deg)`;
-
       this.setState({
         tabs: ["future", "sales", "testimonials", "about"],
       });
     } else {
       futureTab.style.opacity = "0";
-      azaelFloat.style.opacity = "0";
     }
 
+    // const aboutDiv = document.querySelector("#about-tab");
+
+    // if (aboutTabRect.y > aboutSubRect.y) {
+    //   aboutTab.style.opacity = "0";
+    //   aboutDiv.style.width = "10%";
+    //   // aboutDiv.style.padding = "4vh";
+    // } else {
+    //   aboutTab.style.opacity = "1";
+    //   aboutDiv.style.width = "100%";
+    // }
+
+    // Testimonals Tab
+
+    // const testTab = document.querySelector("#testimonials-m");
+    // const testTabRect = testTab.getBoundingClientRect();
+
+    // const testSub = document.querySelector("#testimonialsM");
+    // const testSubRect = testSub.getBoundingClientRect();
+
+    // const testDiv = document.querySelector("#testimonials-tab");
+
+    // if (aboutTab.style.opacity == 1 && aboutSubRect.y / 1000 > = -1) {
+    //   testTab.style.opacity = "0";
+    //   testDiv.style.width = "10%";
+    // } else {
+    //   testTab.style.display = "1";
+    //   testDiv.style.width = "100%";
+    // }
+
     // MCA Positions
+
+    // this.setState({
+    //   offsetY: window.pageYOffset,
+    // });
+
     const McaBox = document.querySelector("#mcaM");
     const McaRect = McaBox.getBoundingClientRect();
     if (McaRect.y < 0) {
       this.setState({
-        offsetY: McaRect.y * -0.25,
+        offsetY: McaRect.y * -0.5,
       });
     } else {
       this.setState({
@@ -149,26 +166,18 @@ class Mobile extends Component {
       });
     }
 
-    // Jordan Positions
-    const JordanBox = document.querySelector("#jordanM");
-    const JordanRect = JordanBox.getBoundingClientRect();
-    if (JordanRect.y < 0) {
-      this.setState({
-        JordanOffset: JordanRect.y * -0.5,
-      });
-    } else {
-      this.setState({
-        JordanOffset: 0,
-      });
-    }
-
     // Azael Positions
     const AzaelBox = document.querySelector("#azaelM");
     const AzaelRect = AzaelBox.getBoundingClientRect();
     if (AzaelRect.y < 0) {
-      this.setState({
-        AzaelOffset: AzaelRect.y * -0.5,
-      });
+      this.setState(
+        {
+          AzaelOffset: AzaelRect.y * -0.5,
+        }
+        // () => {
+        //   console.log(this.state.JoundOffset);
+        // }
+      );
     } else {
       this.setState({
         AzaelOffset: 0,
@@ -221,18 +230,6 @@ class Mobile extends Component {
   }
 
   componentDidMount() {
-    window.onbeforeunload = function () {
-      window.scrollTo(0, 0);
-    };
-    // useEffect(() => {
-    //   window.scrollTo(0, 0);
-    // }, []);
-    // window.scrollTo(0, 0);
-
-    // window.addEventListener("beforeunload", (e) => {
-    //   window.scrollTop(0);
-    // });
-
     window.addEventListener("scroll", (e) => this.handleScroll(e), {
       passive: true,
     });
@@ -247,14 +244,26 @@ class Mobile extends Component {
     window.removeEventListener("scroll", this.handleScroll());
   }
 
+  // tabClick(e) {
+  //   if (e == "about") {
+  //     var tab = document.getElementById("mcaM");
+  //     tab.scrollIntoView();
+  //   } else if (e == "testimonials") {
+  //     var tab = document.getElementById("joundM");
+  //     tab.scrollIntoView();
+  //   }
+  // }
+
+  // onHover(e) {
+  //   console.log();
+
+  //   const tab = document.querySelector(`#${e}-m`);
+  //   tab.style.opacity = "1";
+  // }
+
   render() {
     return (
       <React.Fragment>
-        {/* Floating Images */}
-        <img className="mcafloat-m" src={mcafloat}></img>
-        <img className="joundfloat-m" src={joundfloat}></img>
-        <img className="jordanfloat-m" src={jordanfloat}></img>
-        <img className="azaelfloat-m" src={azaelfloat}></img>
         {/* Tabs */}
 
         <div className="float-tabs">
@@ -301,13 +310,13 @@ class Mobile extends Component {
         </div> */}
 
         {/* Tabs */}
-        <div className="container-m" id="top" ref={this.top}>
+        <div className="container-m">
           <img
             id="mcaM"
             className="mini-img"
             src={mca}
             alt=""
-            // style={{ transform: `translateY(${this.state.offsetY}px)` }}
+            style={{ transform: `translateY(${this.state.offsetY}px)` }}
           />
 
           <div></div>
@@ -368,9 +377,9 @@ class Mobile extends Component {
             className="mini-img"
             src={jound}
             alt=""
-            // style={{
-            //   transform: `translateY(${this.state.JoundOffset}px)`,
-            // }}
+            style={{
+              transform: `translateY(${this.state.JoundOffset}px)`,
+            }}
           />
 
           <article id="testimonialsM">
@@ -411,29 +420,19 @@ class Mobile extends Component {
               {this.state.scouttLoad ? (
                 <div>
                   {this.state.scouttApp.map((scouttApi, index) => (
-                    <section className="purchases-m" key={index}>
+                    <section key={index}>
                       <div>
-                        <h3>Total Purchases:{""}</h3>
                         <h3>
-                          {" "}
+                          Total Purchases:{""}
                           <CountUpPurchases num={this.state.scoutPurchases} />
                         </h3>
                       </div>
 
                       <div>
-                        <h3>Total Sales:{""}</h3>
                         <h3>
+                          Total Sales:{""}
                           <CountUpSales num={this.state.scoutSales} />
                         </h3>
-                      </div>
-                      <div>
-                        <p>
-                          Scraped from my{" "}
-                          <a href="https://scoutapp.ai/@shvrkboy">
-                            ScoutApp API
-                          </a>{" "}
-                          using Puppetter
-                        </p>
                       </div>
                     </section>
                   ))}
@@ -452,9 +451,9 @@ class Mobile extends Component {
               className="mini-img"
               src={azael}
               alt=""
-              // style={{
-              //   transform: `translateY(${this.state.AzaelOffset}px)`,
-              // }}
+              style={{
+                transform: `translateY(${this.state.AzaelOffset}px)`,
+              }}
             />
           </article>
           <article className="articles-right-m">
@@ -483,7 +482,6 @@ class Mobile extends Component {
             </div>
           </article>
         </div>
-        <footer className="footer-m">made with love shvrkboy</footer>
       </React.Fragment>
     );
   }

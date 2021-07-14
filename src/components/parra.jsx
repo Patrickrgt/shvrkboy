@@ -610,7 +610,7 @@ class Parra extends Component {
               <div id="comment" className="row">
                 <h6>
                   Scraped from my{" "}
-                  <a href="https://scoutapp.ai/@shvrkboy">ScouttAPI</a> using
+                  <a href="https://scoutapp.ai/@shvrkboy">ScoutApp API</a> using
                   Puppetter
                 </h6>
               </div>
