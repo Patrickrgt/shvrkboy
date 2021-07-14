@@ -423,9 +423,38 @@ class Parra extends Component {
                 FUTURE
               </h1>
               <div className="extras-container">
-                <span className="extras">
-                  use the mouse wheel to scroll through the tabs
-                </span>
+                {this.state.tab === 0 ? (
+                  <span className="extras">
+                    Nike Off-White MCA's were the first super limited shoe I
+                    managed to hit. Events like that created momentum for me
+                    throughout my reselling career that made the model a special
+                    momento.
+                  </span>
+                ) : this.state.tab === 1 ? (
+                  <span className="extras">
+                    My favorite footwear brand is New Balance and I love the
+                    silhouette and tones of the JJJJound 992 New Balance's.
+                    Definitely my favorite sneaker in my collection.
+                  </span>
+                ) : this.state.tab === 2 ? (
+                  <span className="extras">
+                    Not much of a Jordan fan in all honesty but if I had to
+                    choose one colorway it would be the OG Neutral Grey's.
+                  </span>
+                ) : this.state.tab === 3 ? (
+                  <span className="extras">
+                    Yeezy 700 v3 Azael's are so unique, I believe the
+                    single-construction no-lace design that Kanye West is
+                    supporting towards--definitely screams 'the future'.
+                  </span>
+                ) : (
+                  <div></div>
+                )}
+                <div>
+                  <span className="extras">
+                    you can use the mouse wheel to scroll through the tabs
+                  </span>
+                </div>
               </div>
             </Grid>
           </Grid>

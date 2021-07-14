@@ -5,10 +5,10 @@ import jound from "../img/joundmob.jpg";
 import jordan from "../img/jordanmob.jpg";
 import azael from "../img/azaelmob.jpg";
 
-import mcafloat from "../img/mcafloat.png";
-import jordanfloat from "../img/jordanfloat.png";
-import azaelfloat from "../img/azaelfloat.png";
-import joundfloat from "../img/joundfloat.png";
+import mcafloat from "../img/mcafloatflipped.png";
+import jordanfloat from "../img/jordanfloatflipped.png";
+import azaelfloat from "../img/azaelfloatflipped.png";
+import joundfloat from "../img/joundfloatflipped.png";
 
 import CountUpPurchases from "./countuppurchases.jsx";
 import CountUpSales from "./countupsales.jsx";
@@ -57,14 +57,18 @@ class Mobile extends Component {
     const aboutTab = document.querySelector("#about-m");
     const aboutSub = document.querySelector("#aboutM").getBoundingClientRect();
 
+    const mcaQuote = document.querySelector(".mca-quote");
     if (1 < aboutSub.y) {
       aboutTab.style.opacity = "1";
       mcaFloat.style.opacity = "1";
+      mcaQuote.style.opacity = "1";
       mcaFloat.style.transform = `rotate(${this.state.offsetY}deg)`;
+
       this.setState({
         tabs: ["about", "testimonials", "sales", "future"],
       });
     } else {
+      mcaQuote.style.opacity = "0";
       aboutTab.style.opacity = "0";
       mcaFloat.style.opacity = "0";
     }
@@ -75,9 +79,11 @@ class Mobile extends Component {
       .querySelector("#testimonialsM")
       .getBoundingClientRect();
 
+    const joundQuote = document.querySelector(".jound-quote");
     if (testImg.top < 1 && 1 < testSub.top) {
       testTab.style.opacity = "1";
       joundFloat.style.opacity = "1";
+      joundQuote.style.opacity = "1";
       joundFloat.style.transform = `rotate(${this.state.JoundOffset}deg)`;
       this.setState({
         tabs: ["testimonials", "about", "sales", "future"],
@@ -85,15 +91,18 @@ class Mobile extends Component {
     } else {
       testTab.style.opacity = "0";
       joundFloat.style.opacity = "0";
+      joundQuote.style.opacity = "0";
     }
 
     const salesTab = document.querySelector("#sales-m");
     const salesImg = document.querySelector("#jordanM").getBoundingClientRect();
     const salesSub = document.querySelector("#salesM").getBoundingClientRect();
 
+    const jordanQuote = document.querySelector(".jordan-quote");
     if (salesImg.top < 1 && 1 < salesSub.top) {
       salesTab.style.opacity = "1";
       jordanFloat.style.opacity = "1";
+      jordanQuote.style.opacity = "1";
       jordanFloat.style.transform = `rotate(${this.state.JordanOffset}deg)`;
 
       this.setState({
@@ -102,6 +111,7 @@ class Mobile extends Component {
     } else {
       salesTab.style.opacity = "0";
       jordanFloat.style.opacity = "0";
+      jordanQuote.style.opacity = "0";
     }
 
     const futureTab = document.querySelector("#future-m");
@@ -110,9 +120,12 @@ class Mobile extends Component {
       .querySelector("#futureM")
       .getBoundingClientRect();
 
+    const azaelQuote = document.querySelector(".azael-quote");
+
     if (futureImg.top < 1 && 1 < futureSub.top) {
       futureTab.style.opacity = "1";
       azaelFloat.style.opacity = "1";
+      azaelQuote.style.opacity = "1";
       azaelFloat.style.transform = `rotate(${this.state.AzaelOffset}deg)`;
 
       this.setState({
@@ -121,6 +134,7 @@ class Mobile extends Component {
     } else {
       futureTab.style.opacity = "0";
       azaelFloat.style.opacity = "0";
+      azaelQuote.style.opacity = "0";
     }
 
     // MCA Positions
@@ -271,6 +285,25 @@ class Mobile extends Component {
           className="azaelfloat-m"
           src={azaelfloat}
         ></img>
+        <span className="mca-quote">
+          Nike Off-White MCA's were the first super limited shoe I managed to
+          hit. Events like that created momentum for me throughout my reselling
+          career that made the model a special momento.
+        </span>
+        <span className="jound-quote">
+          My favorite footwear brand is New Balance and I love the silhouette
+          and tones of the JJJJound 992 New Balance's. Definitely my favorite
+          sneaker in my collection.
+        </span>
+        <span className="jordan-quote">
+          Not much of a Jordan fan in all honesty but if I had to choose one
+          colorway it would be the OG Neutral Grey's.
+        </span>
+        <span className="azael-quote">
+          Yeezy 700 v3 Azael's are so unique, I believe the single-construction
+          no-lace design that Kanye West is supporting towards--definitely
+          screams 'the future'.
+        </span>
         {/* Tabs */}
 
         <div className="float-tabs">
@@ -499,7 +532,10 @@ class Mobile extends Component {
             </div>
           </article>
         </div>
-        <footer className="footer-m">made by shvrkboy</footer>
+        <footer className="footer-m">
+          made by shvrkboy. if parallax on the page is choppy it's most likely
+          because your phone is in low power mode.
+        </footer>
       </React.Fragment>
     );
   }
