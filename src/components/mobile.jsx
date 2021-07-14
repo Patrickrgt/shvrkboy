@@ -483,7 +483,7 @@ class Mobile extends Component {
             </div>
           </article>
         </div>
-        <footer className="footer-m">made with love shvrkboy</footer>
+        <footer className="footer-m">made by shvrkboy</footer>
       </React.Fragment>
     );
   }
