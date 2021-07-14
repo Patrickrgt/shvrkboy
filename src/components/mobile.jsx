@@ -56,9 +56,11 @@ class Mobile extends Component {
 
     const aboutTab = document.querySelector("#about-m");
     const aboutSub = document.querySelector("#aboutM").getBoundingClientRect();
+    const mcaFloatBound = mcaFloat.getBoundingClientRect();
 
     const mcaQuote = document.querySelector(".mca-quote");
-    if (1 < aboutSub.y) {
+    if (mcaFloatBound.bottom < aboutSub.top) {
+      console.log(mcaFloatBound.top, aboutSub.top);
       aboutTab.style.opacity = "1";
       mcaFloat.style.opacity = "1";
       mcaQuote.style.opacity = "1";
@@ -80,7 +82,11 @@ class Mobile extends Component {
       .getBoundingClientRect();
 
     const joundQuote = document.querySelector(".jound-quote");
-    if (testImg.top < 1 && 1 < testSub.top) {
+    const joundFloatBound = joundFloat.getBoundingClientRect();
+    if (
+      testImg.top < joundFloatBound.top &&
+      1 < joundFloatBound.bottom < testSub.top - joundFloatBound.bottom
+    ) {
       testTab.style.opacity = "1";
       joundFloat.style.opacity = "1";
       joundQuote.style.opacity = "1";
@@ -98,8 +104,12 @@ class Mobile extends Component {
     const salesImg = document.querySelector("#jordanM").getBoundingClientRect();
     const salesSub = document.querySelector("#salesM").getBoundingClientRect();
 
+    const jordanFloatBound = jordanFloat.getBoundingClientRect();
     const jordanQuote = document.querySelector(".jordan-quote");
-    if (salesImg.top < 1 && 1 < salesSub.top) {
+    if (
+      salesImg.top < jordanFloatBound.top &&
+      1 < jordanFloatBound.bottom < salesSub.top - jordanFloatBound.bottom
+    ) {
       salesTab.style.opacity = "1";
       jordanFloat.style.opacity = "1";
       jordanQuote.style.opacity = "1";
@@ -122,7 +132,14 @@ class Mobile extends Component {
 
     const azaelQuote = document.querySelector(".azael-quote");
 
-    if (futureImg.top < 1 && 1 < futureSub.top) {
+    const azaelFloatBound = azaelFloat.getBoundingClientRect();
+    // testImg.top < joundFloatBound.top &&
+    //   1 < joundFloatBound.bottom < testSub.top - joundFloatBound.bottom;
+
+    if (
+      futureImg.top < azaelFloatBound.top &&
+      1 < azaelFloatBound.bottom < futureSub.top - azaelFloatBound.bottom
+    ) {
       futureTab.style.opacity = "1";
       azaelFloat.style.opacity = "1";
       azaelQuote.style.opacity = "1";
@@ -426,7 +443,7 @@ class Mobile extends Component {
             {this.state.apiLoaded === true ? (
               <div className="test-main-m">
                 {this.state.twitterRef.map((ref, index) => (
-                  <div key={index} className="container ">
+                  <div key={index} className="container-test-m ">
                     <div className="test-sub-m">
                       <div className="test-img-col-m">
                         <img

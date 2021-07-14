@@ -954,6 +954,7 @@ body {
     left: 0;
     margin: 15% 0 0 4%;
     transition: all ease 1s;
+    margin-right: 2%;
   }
 
   .joundfloat-m {
@@ -963,6 +964,7 @@ body {
     left: 0;
     margin: 15% 0 0 4%;
     transition: all ease 1s;
+    margin-right: 2%;
   }
 
   .jordanfloat-m {
@@ -973,6 +975,7 @@ body {
     margin: 15% 0 0 4%;
     transition: all ease 1s;
     z-index: 2;
+    margin-right: 2%;
   }
 
   .azaelfloat-m {
@@ -983,9 +986,10 @@ body {
     margin: 15% 0 0 4%;
     transition: all ease 1s;
     z-index: 2;
+    margin-right: 2%;
   }
 
-  .container {
+  .container-test-m {
     width: 85%;
   }
 }
