@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 
-import mca from "../img/mca.png";
-
-import jound from "../img/jound.png";
-import jordan from "../img/jordan.png";
+import mca from "../img/mcacom.jpg";
+import jound from "../img/joundcom.jpg";
+import jordan from "../img/jordancom.jpg";
 import azael from "../img/azaelcom.jpg";
 
 import CountUpPurchases from "./countuppurchases.jsx";
@@ -38,6 +37,8 @@ class Mobile extends Component {
     waitTime: 0,
     offsetY: 0,
     setOffsetY: 1,
+    tabs: ["about", "testimonials", "sales", "future"],
+    salesTab: true,
   };
 
   handleScroll(e) {
@@ -45,6 +46,97 @@ class Mobile extends Component {
       offsetY: window.pageYOffset,
     });
     // console.log();
+
+    // About Tab
+
+    // const aboutTab = document.querySelector("#about-m");
+    // const aboutTabRect = aboutTab.getBoundingClientRect();
+
+    // console.log(aboutTabRect);
+
+    const aboutTab = document.querySelector("#about-m");
+    const aboutSub = document.querySelector("#aboutM").getBoundingClientRect();
+
+    if (1 < aboutSub.y) {
+      aboutTab.style.opacity = "1";
+      this.setState({
+        tabs: ["about", "testimonials", "sales", "future"],
+      });
+    } else {
+      aboutTab.style.opacity = "0";
+    }
+
+    const testTab = document.querySelector("#testimonials-m");
+    const testImg = document.querySelector("#joundM").getBoundingClientRect();
+    const testSub = document
+      .querySelector("#testimonialsM")
+      .getBoundingClientRect();
+
+    if (testImg.top < 1 && 1 < testSub.top) {
+      testTab.style.opacity = "1";
+      this.setState({
+        tabs: ["testimonials", "about", "sales", "future"],
+      });
+    } else {
+      testTab.style.opacity = "0";
+    }
+
+    const salesTab = document.querySelector("#sales-m");
+    const salesImg = document.querySelector("#jordanM").getBoundingClientRect();
+    const salesSub = document.querySelector("#salesM").getBoundingClientRect();
+
+    if (salesImg.top < 1 && 1 < salesSub.top) {
+      salesTab.style.opacity = "1";
+      this.setState({
+        tabs: ["sales", "testimonials", "about", "future"],
+      });
+    } else {
+      salesTab.style.opacity = "0";
+    }
+
+    const futureTab = document.querySelector("#future-m");
+    const futureImg = document.querySelector("#azaelM").getBoundingClientRect();
+    const futureSub = document
+      .querySelector("#futureM")
+      .getBoundingClientRect();
+
+    if (futureImg.top < 1 && 1 < futureSub.top) {
+      futureTab.style.opacity = "1";
+      this.setState({
+        tabs: ["future", "sales", "testimonials", "about"],
+      });
+    } else {
+      futureTab.style.opacity = "0";
+    }
+
+    // const aboutDiv = document.querySelector("#about-tab");
+
+    // if (aboutTabRect.y > aboutSubRect.y) {
+    //   aboutTab.style.opacity = "0";
+    //   aboutDiv.style.width = "10%";
+    //   // aboutDiv.style.padding = "4vh";
+    // } else {
+    //   aboutTab.style.opacity = "1";
+    //   aboutDiv.style.width = "100%";
+    // }
+
+    // Testimonals Tab
+
+    // const testTab = document.querySelector("#testimonials-m");
+    // const testTabRect = testTab.getBoundingClientRect();
+
+    // const testSub = document.querySelector("#testimonialsM");
+    // const testSubRect = testSub.getBoundingClientRect();
+
+    // const testDiv = document.querySelector("#testimonials-tab");
+
+    // if (aboutTab.style.opacity == 1 && aboutSubRect.y / 1000 > = -1) {
+    //   testTab.style.opacity = "0";
+    //   testDiv.style.width = "10%";
+    // } else {
+    //   testTab.style.display = "1";
+    //   testDiv.style.width = "100%";
+    // }
 
     // Jound Positions
     const JoundBox = document.querySelector("#joundM");
@@ -134,13 +226,73 @@ class Mobile extends Component {
     window.removeEventListener("scroll", this.handleScroll());
   }
 
+  // tabClick(e) {
+  //   if (e == "about") {
+  //     var tab = document.getElementById("mcaM");
+  //     tab.scrollIntoView();
+  //   } else if (e == "testimonials") {
+  //     var tab = document.getElementById("joundM");
+  //     tab.scrollIntoView();
+  //   }
+  // }
+
+  // onHover(e) {
+  //   console.log();
+
+  //   const tab = document.querySelector(`#${e}-m`);
+  //   tab.style.opacity = "1";
+  // }
+
   render() {
     return (
       <React.Fragment>
-        <div className="container-m">
-          <div id="about-m" className="header-m">
-            <h1>ABOUT</h1>
+        {/* Tabs */}
+
+        <div className="float-tabs">
+          <div>
+            {this.state.tabs.map((tab) => (
+              // <article id={`${tab}-tab`} className="div-tabs">
+              <div
+                // onClick={() => this.tabClick(tab)}
+                id={`${tab}-m`}
+                className="titles-m"
+              >
+                <h1>{tab.toUpperCase()}</h1>
+              </div>
+              // </article>
+            ))}
           </div>
+        </div>
+        {/* 
+        <div className="float-tabs">
+     
+          <article id="about-tab" className="div-tabs">
+            <div id="about-m" className="titles-m">
+              <h1>ABOUT</h1>
+            </div>
+          </article>
+     
+          <article id="test-tab" className="div-tabs">
+            <div id="test-m" className="titles-m">
+              <h1>TESTIMONIALS</h1>
+            </div>
+          </article>
+ 
+          <article className="div-tabs">
+            <div id="sales-m" className="titles-m">
+              <h1>SALES</h1>
+            </div>
+          </article>
+        
+          <article className="div-tabs">
+            <div id="future-m" className="titles-m">
+              <h1>FUTURE</h1>
+            </div>
+          </article>
+        </div> */}
+
+        {/* Tabs */}
+        <div className="container-m">
           <img
             id="mcaM"
             className="mini-img"
@@ -211,11 +363,8 @@ class Mobile extends Component {
               transform: `translateY(${this.state.JoundOffset * 0.5}px)`,
             }}
           />
-          <div>
-            <h1>TESTIMONIALS</h1>
-          </div>
 
-          <article>
+          <article id="testimonialsM">
             {this.state.apiLoaded === true ? (
               <div className="test-main-m">
                 {this.state.twitterRef.map((ref, index) => (
@@ -246,9 +395,6 @@ class Mobile extends Component {
         {/* JORDAN */}
 
         <div className="container-m">
-          <section>
-            <h1 className="titles-m">SALES</h1>
-          </section>
           <article>
             <img id="jordanM" className="mini-img" src={jordan} alt="" />
 
@@ -289,10 +435,6 @@ class Mobile extends Component {
         </div>
 
         <div className="container-m">
-          <div id="future-m" className="titles-m">
-            <h1>FUTURE</h1>
-          </div>
-
           <article>
             <img
               id="azaelM"

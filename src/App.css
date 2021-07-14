@@ -680,9 +680,65 @@ body {
     scroll-behavior: smooth;
   }
 
-  #about-m {
+  .float-tabs {
     position: fixed;
-    top: 0;
+    transition: all ease 1s;
+    z-index: 3;
+    text-align: left;
+  }
+
+  .div-tabs {
+    opacity: 1;
+    background-color: grey;
+    width: min-content;
+  }
+
+  #about-tab {
+  }
+
+  #about-tab h1 {
+    width: min-content;
+    transition: ease all 1s;
+  }
+
+  #about-m {
+    opacity: 1;
+    transition: ease all 1s;
+  }
+
+  #testimonials-m {
+    opacity: 1;
+    transition: ease all 1s;
+  }
+
+  #sales-m {
+    opacity: 1;
+    transition: ease all 1s;
+  }
+
+  #future-m {
+    opacity: 1;
+    transition: ease all 1s;
+  }
+
+  #about-m:hover {
+    opacity: 1;
+    transition: ease all 1s;
+  }
+
+  #testimonials-m:hover {
+    opacity: 1 !important;
+    transition: ease all 1s;
+  }
+
+  #sales-m:hover {
+    opacity: 1 !important;
+    transition: ease all 1s;
+  }
+
+  #future-m:hover {
+    opacity: 1 !important;
+    transition: ease all 1s;
   }
 
   .container-m {
