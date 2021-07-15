@@ -215,6 +215,13 @@ class Parra extends Component {
     const aboutHeader = document.getElementById("aboutHeader");
     aboutHeader.classList.add("animate__animated", "animate__fadeInRight");
 
+    const aboutSubContainer2 = document.getElementById("aboutSubContainer2");
+    aboutSubContainer2.classList.add(
+      "animate__animated",
+      "animate__fadeInRight",
+      "p-animate-delay-1"
+    );
+
     const aboutSubContainer = document.getElementById("aboutSubContainer");
     aboutSubContainer.classList.add(
       "animate__animated",
@@ -316,6 +323,13 @@ class Parra extends Component {
 
     const aboutSubContainer = document.getElementById("futureSubContainer");
     aboutSubContainer.classList.add(
+      "animate__animated",
+      "animate__fadeInRight",
+      "p-animate-delay-1"
+    );
+
+    const aboutSubContainer2 = document.getElementById("futureSubContainer2");
+    aboutSubContainer2.classList.add(
       "animate__animated",
       "animate__fadeInRight",
       "p-animate-delay-1"
@@ -486,25 +500,64 @@ class Parra extends Component {
                 ABOUT
               </h1>
 
-              <div className="about-sub-container">
-                <article id="aboutSubContainer" className="about-sub">
-                  Thank you for visiting my page!
+              <div id="aboutSubContainer" className="about-sub-container">
+                <article className="about-sub">
+                  “Nike, Yeezy, Supreme,” my friends talked about these brands
+                  with such excitement that I never understood. “Why would
+                  someone spend over one-hundred dollars on a piece of clothing
+                  or on a pair of shoes?” I asked, and I was always hit with,
+                  “You wouldn’t get it, it’s a culture.”
+                  <br></br>
+                  <br></br>I was never a fan of the social exclusivity these
+                  brands endorsed but I was interested in the business. I was a
+                  university student finding ways to cover tuition without
+                  having to sacrifice time for my studies. I worked several
+                  part-time jobs and unpaid internships in the past only to
+                  realize the maxim, “Time is Money”. My time has value and
+                  minimum wage on part-times did not satisfy nor balance out my
+                  university costs and studies.
+                  <br></br>
+                  <br></br>I had to work smarter.
+                  <br></br>
+                  <br></br>I opened up a credit card as soon as I turned
+                  eighteen and started buying Supreme. I calculated my risk by
+                  understanding the third party market on brands. Supreme
+                  t-shirts and accessories retailed on average fifty dollars but
+                  would get marked up by 30% or more on the third party market.
+                  Supreme was exclusive. I live in New York State where Supreme
+                  owns a flagship store, I saw the opportunity and found my
+                  niche. I started by selling each Supreme piece online, paying
+                  off my credit card, then putting my gains towards my small
+                  operation. I expanded outside of Supreme. I would wait in
+                  lines for hours for Nikes, stay up until 3 AM for Yeezys, I
+                  cycled through the buying and selling process for weeks and
+                  kept expanding.
+                </article>
+                <article id="aboutSubContainer2" className="about-sub-right">
+                  I hated waiting in line, especially in New York City where the
+                  motto in these lines is “bully or be bullied”. Waiting in line
+                  started to become more of a hassle than a hustle. If I wanted
+                  to continue expanding my operation, I needed to automate
+                  purchases. I started investing in programs that acted as
+                  multiple customers purchasing products online. I researched
+                  proxy servers and cloud servers to maximize my success, each
+                  new infrastructure adding to my expenses, with the risk of
+                  failure increasing alongside success. But, I get it now. It’s
+                  a culture.
                   <br></br>
                   <br></br>
-                  I'm a sneakerhead that's into art, fashion, coding and
-                  reselling.
+                  Today I operate from home, buying and selling hot commodities
+                  ranging from limited sneakers, apparel, and technology. Given
+                  the opportunity of managing and starting a business taught me
+                  to value my time and money, to not be afraid to take risks and
+                  be grateful for what I have and appreciate my luck in life.
                   <br></br>
                   <br></br>
-                  My work ethic revolves around my nurting at a young age. I
-                  never felt good enough compared to others, but when I stopped
-                  comparing myself to others or caring what other people
-                  thought--I started to learn to do things for myself--to make
-                  myself proud.
-                  <br></br>
-                  <br></br>
-                  Today I'm an aspiring full-stack developer maintaining an LLC
-                  with passion to continue learning from people smarter than me
-                  and creating projects with groups of like-minded people.
+                  Strangely enough, I’m known as shvrkboy because when I was
+                  younger I was told I look like young Taylor Lautner. I added a
+                  ‘v’ because most usernames with ‘sharkboy’ are taken and
+                  during the time, turning an A upside down as a V seemed an
+                  appropriate and popular solution.
                 </article>
               </div>
             </div>
@@ -661,27 +714,42 @@ class Parra extends Component {
                 FUTURE
               </h1>
 
-              <div className="future-sub-container">
-                <article id="futureSubContainer" className="future-sub">
-                  I wish to continue to maintain my LLC, pursue my Master's
-                  Degree in Computer Science, grasp understanding of new
-                  computing languages, libraries, and data analytics as well as
-                  managing to land a paid internship or full-time job within my
-                  field of study.
+              <div id="futureSubContainer" className="future-sub-container">
+                <article className="future-sub">
+                  I find myself always getting interested in niche spaces but
+                  always relating those spaces back to art. When I was younger I
+                  wanted to be an artist. It eventually grew into graphic
+                  design, then game design, then music production, then sound
+                  engineering, then fashion. These niches spiraled into what I
+                  pursue now: Computer Science. I’m pursuing my dream of working
+                  as a full-stack engineer. Building an application from the
+                  ground-up forces you to design logically and artistically and
+                  I’m attached to that challenge. Knowing you’ve worked on a
+                  project that people use is an encouraging feeling of respect
+                  towards your craft.
                   <br></br>
                   <br></br>
-                  Five years from now I see myself managing a passive income
-                  through sustainable crypto mining and reselling, while on the
-                  verge of becoming financially stable through working as a
-                  full-time developer.
+                  My answer to the age old question of where I see myself in
+                  five years is: Successful. Successful in my eyes. Owning a
+                  house, having a family, managing a car, pursuing a stable
+                  career.
+                </article>
+                <article id="futureSubContainer2" className="future-sub">
+                  I want to inspire people with my art, whether it be through
+                  code or graphics. If not in five years then ten. I want to
+                  make myself proud so I will continue working hard everyday
+                  until I’m content. Comfort is my worst enemy, so I’m always
+                  learning something new. Whether it be Art, Design, Fashion,
+                  Software Engineering, Blockchain, or Business. I’m dedicated
+                  to mastering my craft and understandings so I’m always keeping
+                  up with trends. Of course the world moves fast and
+                  unexpectedly, I find myself always adapting.
                   <br></br>
-                  <br></br>I wish to support my family and future family so I
-                  can wake up and do the things I love by working on projects in
-                  code and art.
                   <br></br>
-                  <br></br>I want to meet more people with the same motibational
-                  drive to learn and acheieve more so that I may learn under
-                  them and prove to be successful as well.
+                  The future is unknown.
+                  <br></br>
+                  <br></br>However, whichever career I pursue in the
+                  future—design and technology will always be my niche.
                 </article>
               </div>
             </div>
