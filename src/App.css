@@ -124,9 +124,11 @@ body {
   text-align: right;
   width: 150%;
   border-left: 1px solid black;
+  align-items: flex-start;
 }
 
 .about-sub {
+  flex: 1 0 50%;
   text-align: left;
   line-height: 3vh;
   margin-left: 1vw;
@@ -134,10 +136,8 @@ body {
   background-color: rgba(255, 255, 255, 0.9);
 }
 
-.about-sub p {
-}
-
 .about-sub-right {
+  flex: 1 0 50%;
   text-align: left;
   line-height: 3vh;
   padding-left: 1.5vw;
@@ -264,9 +264,11 @@ body {
   text-align: right;
   width: 150%;
   border-left: 1px solid black;
+  align-items: flex-start;
 }
 
 .future-sub {
+  flex: 1 0 50%;
   text-align: left;
   line-height: 3vh;
   margin-left: 1vw;
@@ -672,8 +674,8 @@ body {
 
 .extras-container {
   position: relative;
-  top: 3vw;
-  left: 5vw;
+  top: 2vw;
+  left: 20vw;
 }
 
 .extras {

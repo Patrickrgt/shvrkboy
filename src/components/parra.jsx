@@ -436,42 +436,36 @@ class Parra extends Component {
               >
                 FUTURE
               </h1>
-              <div className="extras-container">
-                {this.state.tab === 0 ? (
-                  <span className="extras">
-                    Nike Off-White MCA's were the first super limited shoe I
-                    managed to hit. Events like that created momentum for me
-                    throughout my reselling career that made the model a special
-                    momento.
-                  </span>
-                ) : this.state.tab === 1 ? (
-                  <span className="extras">
-                    My favorite footwear brand is New Balance and I love the
-                    silhouette and tones of the JJJJound 992 New Balance's.
-                    Definitely my favorite sneaker in my collection.
-                  </span>
-                ) : this.state.tab === 2 ? (
-                  <span className="extras">
-                    Not much of a Jordan fan in all honesty but if I had to
-                    choose one colorway it would be the OG Neutral Grey's.
-                  </span>
-                ) : this.state.tab === 3 ? (
-                  <span className="extras">
-                    Yeezy 700 v3 Azael's are so unique, I believe the
-                    single-construction no-lace design that Kanye West is
-                    supporting towards--definitely screams 'the future'.
-                  </span>
-                ) : (
-                  <div></div>
-                )}
-                <div>
-                  <span className="extras">
-                    you can use the mouse wheel to scroll through the tabs
-                  </span>
-                </div>
-              </div>
             </Grid>
           </Grid>
+          <div className="extras-container">
+            {this.state.tab === 0 ? (
+              <span className="extras">
+                Nike Off-White MCA's were the first super limited shoe I managed
+                to hit. Events like that created momentum for me throughout my
+                reselling career that made the model a special momento.
+              </span>
+            ) : this.state.tab === 1 ? (
+              <span className="extras">
+                My favorite footwear brand is New Balance and I love the
+                silhouette and tones of the JJJJound 992 New Balance's.
+                Definitely my favorite sneaker in my collection.
+              </span>
+            ) : this.state.tab === 2 ? (
+              <span className="extras">
+                Not much of a Jordan fan in all honesty but if I had to choose
+                one colorway it would be the OG Neutral Grey's.
+              </span>
+            ) : this.state.tab === 3 ? (
+              <span className="extras">
+                Yeezy 700 v3 Azael's are so unique, I believe the
+                single-construction no-lace design that Kanye West is supporting
+                towards--definitely screams 'the future'.
+              </span>
+            ) : (
+              <div></div>
+            )}
+          </div>
         </div>
 
         <ul className="nav-img-div" data-relative-input="true" id="scene">
@@ -513,9 +507,9 @@ class Parra extends Component {
                   university student finding ways to cover tuition without
                   having to sacrifice time for my studies. I worked several
                   part-time jobs and unpaid internships in the past only to
-                  realize the maxim, “Time is Money”. My time has value and
-                  minimum wage on part-times did not satisfy nor balance out my
-                  university costs and studies.
+                  realize “Time is Money.” My time has value and minimum wage on
+                  part-time’s did not satisfy nor balance out my university
+                  costs and studies.
                   <br></br>
                   <br></br>I had to work smarter.
                   <br></br>
@@ -524,40 +518,44 @@ class Parra extends Component {
                   understanding the third party market on brands. Supreme
                   t-shirts and accessories retailed on average fifty dollars but
                   would get marked up by 30% or more on the third party market.
-                  Supreme was exclusive. I live in New York State where Supreme
-                  owns a flagship store, I saw the opportunity and found my
-                  niche. I started by selling each Supreme piece online, paying
-                  off my credit card, then putting my gains towards my small
-                  operation. I expanded outside of Supreme. I would wait in
-                  lines for hours for Nikes, stay up until 3 AM for Yeezys, I
-                  cycled through the buying and selling process for weeks and
-                  kept expanding.
+                  Supreme was exclusive. I live in New York City where Supreme
+                  owns a flagship store. I saw an opportunity and found my
+                  niche.
+                  <br></br>
+                  <br></br>I started by selling each Supreme piece online,
+                  paying off my credit card and then putting my gains towards my
+                  small operation.
                 </article>
                 <article id="aboutSubContainer2" className="about-sub-right">
-                  I hated waiting in line, especially in New York City where the
-                  motto in these lines is “bully or be bullied”. Waiting in line
-                  started to become more of a hassle than a hustle. If I wanted
-                  to continue expanding my operation, I needed to automate
-                  purchases. I started investing in programs that acted as
-                  multiple customers purchasing products online. I researched
-                  proxy servers and cloud servers to maximize my success, each
-                  new infrastructure adding to my expenses, with the risk of
-                  failure increasing alongside success. But, I get it now. It’s
-                  a culture.
+                  I expanded outside of Supreme; I would wait in long hour lines
+                  for Nikes, then stay up until 3 AM for Yeezys. I cycled
+                  through the buying and selling process for weeks and kept
+                  expanding.
+                  <br></br>
+                  <br></br>I hated waiting in line, especially in New York City
+                  where the motto in these lines is “bully or be bullied.”
+                  Waiting in line started to become more of a hassle than a
+                  hustle. If I wanted to continue expanding my operation, I
+                  needed to automate purchases. I started investing in programs
+                  that acted as multiple customers purchasing products online. I
+                  researched proxy servers and cloud servers to maximize my
+                  success, with each new infrastructure only adding to my
+                  expenses; the risk of failure increasing alongside success.
+                  But, I get it now. It’s a culture.
                   <br></br>
                   <br></br>
                   Today I operate from home, buying and selling hot commodities
                   ranging from limited sneakers, apparel, and technology. Given
-                  the opportunity of managing and starting a business taught me
-                  to value my time and money, to not be afraid to take risks and
-                  be grateful for what I have and appreciate my luck in life.
+                  the opportunity of managing and starting a business has taught
+                  me to value my time and money, to not be afraid to take risks
+                  and be grateful for what I have and appreciate my luck in
+                  life.
                   <br></br>
                   <br></br>
                   Strangely enough, I’m known as shvrkboy because when I was
-                  younger I was told I look like young Taylor Lautner. I added a
-                  ‘v’ because most usernames with ‘sharkboy’ are taken and
-                  during the time, turning an A upside down as a V seemed an
-                  appropriate and popular solution.
+                  younger I was told I look like a young Taylor Lautner. I added
+                  a ‘v’ because most usernames with ‘sharkboy’ were taken and at
+                  the time, turning an A upside down as a V seemed popular.
                 </article>
               </div>
             </div>
@@ -717,7 +715,7 @@ class Parra extends Component {
               <div id="futureSubContainer" className="future-sub-container">
                 <article className="future-sub">
                   I find myself always getting interested in niche spaces but
-                  always relating those spaces back to art. When I was younger I
+                  always relate those spaces back to art. When I was younger, I
                   wanted to be an artist. It eventually grew into graphic
                   design, then game design, then music production, then sound
                   engineering, then fashion. These niches spiraled into what I
@@ -730,26 +728,31 @@ class Parra extends Component {
                   <br></br>
                   <br></br>
                   My answer to the age old question of where I see myself in
-                  five years is: Successful. Successful in my eyes. Owning a
-                  house, having a family, managing a car, pursuing a stable
-                  career.
+                  five years is: Successful.
+                  <br></br>
+                  <br></br>
+                  Successful in my eyes? Owning a house, having a family, a car,
+                  and pursuing a stable career.
                 </article>
                 <article id="futureSubContainer2" className="future-sub">
                   I want to inspire people with my art, whether it be through
-                  code or graphics. If not in five years then ten. I want to
+                  code or graphics. If not in five years, then ten. I want to
                   make myself proud so I will continue working hard everyday
                   until I’m content. Comfort is my worst enemy, so I’m always
                   learning something new. Whether it be Art, Design, Fashion,
                   Software Engineering, Blockchain, or Business. I’m dedicated
-                  to mastering my craft and understandings so I’m always keeping
-                  up with trends. Of course the world moves fast and
-                  unexpectedly, I find myself always adapting.
+                  to mastering my craft and understanding so I’m always keeping
+                  up with trends.
+                  <br></br>
+                  <br></br>
+                  Of course, with the world moving fast and unexpectedly, I
+                  always find myself adapting.
                   <br></br>
                   <br></br>
                   The future is unknown.
                   <br></br>
-                  <br></br>However, whichever career I pursue in the
-                  future—design and technology will always be my niche.
+                  <br></br>Whichever career I pursue in the future—design and
+                  technology will always be my passion.
                 </article>
               </div>
             </div>
